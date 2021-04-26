@@ -1,37 +1,69 @@
-body {
-  text-align: center;
-}
-.container {
+.grid-container {
+  color: #cccccc;
+  height: 100vh;
+  font-size: 25px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr repeat(2, 1.5fr) 1fr;
-}
-.div {
-  background-color: blue;
-  margin: 10px;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px 20px;
+  grid-template-areas:
+    'A A . B'
+    'C Box Box Box'
+    'C Box Box Box';
 }
 
-.div1 {
-  grid-area: 1 / 1 / 2 / 4;
+.A {
+  grid-area: A;
+  background-color: #444444;
 }
-.div2 {
-  grid-area: 2 / 1 / 4 / 2;
+
+.B {
+  grid-area: B;
+  background-color: #444444;
 }
-.div3 {
-  grid-area: 2 / 2 / 3 / 3;
+
+.C {
+  grid-area: C;
+  background-color: #444444;
 }
-.div4 {
-  grid-area: 2 / 2 / 3 / 4;
+
+.Box {
+  display: grid;
+  background-color: #444444;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px 20px;
+  grid-template-areas:
+    'E F F'
+    'E . G';
+  grid-area: Box;
 }
-.div5 {
-  grid-area: 3 / 2 / 4 / 3;
+
+.E {
+  grid-area: E;
+  background-color: #cccccc;
 }
-.div6 {
-  grid-area: 3 / 3 / 4 / 4;
+
+.F {
+  grid-area: F;
+  background-color: #cccccc;
 }
-.div7 {
-  grid-area: 4 / 1 / 5 / 2;
+
+.G {
+  grid-area: G;
+  background-color: #cccccc;
 }
-.div8 {
-  grid-area: 4 / 1 / 5 / 4;
+
+.item {
+  border-radius: 10px;
+}
+
+.Box {
+  padding: 40px;
+  color: #444444;
+  font-size: 30px;
+}
+
+h1 {
+  margin-left: 1.3rem;
 }
