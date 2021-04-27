@@ -1,69 +1,154 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #33485e;
+}
+
 .grid-container {
-  color: #cccccc;
+  margin: 10px;
   height: 100vh;
-  font-size: 25px;
   display: grid;
-  grid-template-columns: 1.5fr repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 20px 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px 0px;
   grid-template-areas:
-    'A A . B'
-    'C Box Box Box'
-    'C Box Box Box';
+    'Header Header Header'
+    'Title1 Title3 Title4'
+    'Title2 Title3 Title5'
+    'Title2 Title3 Title6';
 }
 
-.A {
-  grid-area: A;
-  background-color: #444444;
-}
-
-.B {
-  grid-area: B;
-  background-color: #444444;
-}
-
-.C {
-  grid-area: C;
-  background-color: #444444;
-}
-
-.Box {
+.Header {
   display: grid;
-  background-color: #444444;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 20px 20px;
+  gap: 0px 10px;
   grid-template-areas:
-    'E F F'
-    'E . G';
-  grid-area: Box;
+    'Title Title Title'
+    'navbar navbar navbar';
+  grid-area: Header;
 }
 
-.E {
-  grid-area: E;
-  background-color: #cccccc;
+.Title {
+  grid-area: Title;
 }
 
-.F {
-  grid-area: F;
-  background-color: #cccccc;
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: 'a b c d e f';
+  grid-area: navbar;
 }
 
-.G {
-  grid-area: G;
-  background-color: #cccccc;
+.a {
+  grid-area: a;
 }
 
-.item {
-  border-radius: 10px;
+.b {
+  grid-area: b;
 }
 
-.Box {
-  padding: 40px;
-  color: #444444;
-  font-size: 30px;
+.c {
+  grid-area: c;
 }
 
-h1 {
-  margin-left: 1.3rem;
+.d {
+  grid-area: d;
+}
+
+.e {
+  grid-area: e;
+}
+
+.f {
+  grid-area: f;
+}
+
+.Title1 {
+  grid-area: Title1;
+}
+
+.Title2 {
+  grid-area: Title2;
+}
+
+.Title3 {
+  grid-area: Title3;
+}
+
+.Title4 {
+  grid-area: Title4;
+}
+
+.Title5 {
+  grid-area: Title5;
+}
+
+.Title6 {
+  grid-area: Title6;
+}
+
+/* Header */
+
+.Header {
+  text-align: center;
+  color: #ffffff;
+  margin: 5px;
+}
+
+.Title {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar :first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.navbar :last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.navItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #3498db;
+  background-color: #ffffff;
+  border-top: 3px solid #3498db;
+}
+
+.learnMore {
+  color: yellow;
+  font-weight: 700;
+}
+
+.content {
+  background-color: #ffffff;
+  margin: 5px;
+  border-radius: 5px;
+  justify-items: center;
+  align-content: stretch;
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+      'Header Header'
+      'Title1 Title4'
+      'Title2 Title5'
+      'Title2 Title6'
+      'Title3 .'
+      'Title3 .'
+      'Title3 .';
+  }
 }
